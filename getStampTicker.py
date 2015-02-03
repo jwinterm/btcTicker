@@ -8,10 +8,9 @@ headers = {'content-type': 'application/json'}
 
 
 def GetTicker(serverURL=URL):
-    """Try and get last block info and return formatted text"""
-    # print('Attempting {0} RPC call'.format(CheckLastBlock.__name__))
+    """Try and get bitstamp ticker info"""
     try:
-        resp = requests.get(serverURL, headers=headers)
+        resp = requests.get(serverURL, headers=headers, verify=False)
         output = json.loads(resp.text)
         print(output)
         last_price = float(output[u'last'])

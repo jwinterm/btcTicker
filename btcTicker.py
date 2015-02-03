@@ -7,7 +7,8 @@ from kivy.properties import ObjectProperty
 from kivy.uix.textinput import TextInput
 from kivy.clock import Clock
 
-import datetime
+import requests
+import json
 import time
 
 from getStampTicker import GetTicker
@@ -19,13 +20,13 @@ class BigLabel(Label):
 
 
 class BigTextInput(TextInput):
-    """ Big label class """
+    """ Big text input class """
     def __init__(self, *args, **kwargs):
         super(BigTextInput, self).__init__(*args, **kwargs)
 
 
 class RootWidget(BoxLayout):
-    """Root Kivy accordion widget class"""
+    """Root Kivy widget class"""
     btc_multiplier_input = ObjectProperty()
     btc_amount_input = ObjectProperty()
     multiplied_btc_amount_input = ObjectProperty()
