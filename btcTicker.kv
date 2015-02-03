@@ -1,0 +1,107 @@
+#:kivy 1.8.0
+
+<RootWidget>:
+    btc_multiplier_input: btc_multiplier_input
+    btc_amount_input: btc_amount_input
+    multiplied_usd_amount_input: multiplied_usd_amount_input
+    usd_amount_input: usd_amount_input
+    multiplied_btc_amount_input: multiplied_btc_amount_input
+    last_updated_text: last_updated_text
+    id: root_widget
+    orientation: "vertical"
+
+    BigLabel:
+        text: "[b]BTC/USD Converter[/b]"
+        halign: "center"
+        color: 1, 1, 1, 1
+        size_hint_x: 1
+        font_size: 60
+
+    BoxLayout:
+        padding: 100, 0, 150, 0
+        orientation: "horizontal"
+        BigLabel:
+            text: "BTC multiplier"
+        BigTextInput:
+            id: btc_multiplier_input
+            text: "0.95"
+    Label:
+        size_hint_y: 0.1
+
+    BoxLayout:
+        padding: 100, 0, 150, 0
+        orientation: "horizontal"
+        BigLabel:
+            text: "BTC amount"
+        BigTextInput:
+            id: btc_amount_input
+            text: "1.0"
+
+    BoxLayout:
+        padding: 100, 0, 150, 0
+        orientation: "horizontal"
+        BigLabel:
+            text: "Multiplied USD amount"
+        BigTextInput:
+            id: multiplied_usd_amount_input
+            text: "0.0"
+            background_color: 1, 0.3, 0.3, 1
+
+    Label:
+        size_hint_y: 0.1
+
+    BoxLayout:
+        padding: 100, 0, 150, 0
+        orientation: "horizontal"
+        BigLabel:
+            text: "USD amount"
+        BigTextInput:
+            id: usd_amount_input
+            text: "100.0"
+
+    BoxLayout:
+        padding: 100, 0, 150, 0
+        orientation: "horizontal"
+        BigLabel:
+            text: "Multiplied BTC amount"
+        BigTextInput:
+            id: multiplied_btc_amount_input
+            text: "0.0"
+            background_color: 1, 0.3, 0.3, 1
+
+    BigLabel:
+        id: last_updated_text
+        text: "Last updated from Bitstamp @ \nLast price (USD/BTC) was "
+        halign: "center"
+        size_hint_x: 1
+        color: 1, 1, 1, 1
+
+    BigLabel:
+        text: "[color=#ff0000]*Fields highlighted in red are the ones being affected by multiplier[/color]"
+        halign: "center"
+        size_hint_x: 1
+        font_size: 12
+        padding: 0, 0
+        size_hint_y: 0.1
+
+<BigLabel>
+    font_size: 24
+    #padding: 20, 20
+    valign: "middle"
+    halign: "right"
+    color: 0, 1, 1, 1
+    #size_hint_y: 0.2
+    size_hint_x: 0.4
+    markup: True
+
+
+<BigTextInput>
+    font_size: 24
+    padding: 30, 26
+    valign: "middle"
+    halign: "center"
+    #color: 0, 1, 1, 1
+    #size_hint_y: 0.2
+    multiline: False
+    size_hint_x: 0.2
+    markup: True
